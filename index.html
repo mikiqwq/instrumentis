@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Instrumentis | Fiecare notă contează</title>
+<meta name="description" content="Instrumentis — instrumente muzicale, accesorii și echipamente audio.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="announcement">Livrare în România • Consultanță pentru alegerea instrumentului • Plată sigură</div>
+<header class="header">
+  <a class="brand" href="#acasa" aria-label="Instrumentis - pagina principală">
+    <img src="assets/logo.jpg" height="100" width="100" alt="Logo Instrumentis">
+  </a>
+  <nav class="nav" id="nav">
+    <a href="#acasa">Acasă</a><a href="#catalog">Catalog</a><a href="#despre">Despre noi</a>
+    <a href="#organizare">Organigramă</a><a href="#contact">Contact</a>
+  </nav>
+  <div class="header-actions">
+
+<button class="lang" id="langBtn">RO / EN</button>
+
+<!-- Containerul este randat, dar mutat în afara ecranului -->
+<div id="google_translate_element" style="position: absolute; left: -9999px; top: -9999px;"></div>
+
+<style>
+  /* Ascunde bara Google Translate și elementele vizuale din interfață */
+  .goog-te-banner-frame,
+  .goog-te-balloon-frame,
+  .skiptranslate,
+  #goog-gt-tt {
+    display: none !important;
+  }
+  
+  body {
+    top: 0 !important;
+    position: static !important;
+  }
+
+  /* Elimină fundalul galben pe text la hover după traducere */
+  font {
+    background-color: transparent !important;
+    box-shadow: none !important;
+  }
+</style>
+
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'ro',
+      includedLanguages: 'en,ro',
+      autoDisplay: false
+    }, 'google_translate_element');
+  }
+</script>
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<script>
+  document.getElementById('langBtn').addEventListener('click', function() {
+    var select = document.querySelector('.goog-te-combo');
+    
+    if (select) {
+      // Determină limba următoare
+      var currentLang = select.value;
+      var nextLang = (currentLang === 'en') ? 'ro' : 'en';
+      
+      // Schimbă opțiunea în dropdown-ul ascuns al Google
+      select.value = nextLang;
+
+      // Declanșează evenimentele necesare pentru ca motorul Google să proceseze modificarea
+      select.dispatchEvent(new Event('change', { bubbles: true }));
+      
+      // Actualizează textul butonului
+      this.textContent = (nextLang === 'en') ? 'EN / RO' : 'RO / EN';
+    } else {
+      alert('Sistemul Google Translate se încarcă. Reîncearcă într-o secundă.');
+    }
+  });
+</script>
+    <button class="cart-btn" id="cartOpen">Coș <span id="cartCount">0</span></button>
+    <button class="menu" id="menuBtn" aria-label="Meniu">☰</button>
+  </div>
+</header>
+
+<main id="acasa">
+<section class="hero">
+  <div class="hero-copy">
+    <p class="eyebrow">INSTRUMENTIS • MUZICĂ • PASIUNE • PERFORMANȚĂ</p>
+    <h1>Fiecare notă <span>contează.</span></h1>
+    <p class="lead">Instrumente alese pentru cei care nu doar ascultă muzica, ci o creează.</p>
+    <div class="hero-actions"><a class="btn gold" href="#catalog">Descoperă catalogul</a><a class="btn outline" href="#contact">Vorbește cu noi</a></div>
+    <div class="trust"><span>✓ Calitate</span><span>✓ Prețuri transparente</span><span>✓ Suport dedicat</span></div>
+  </div>
+  <div class="hero-art"><img src="assets/logo.jpg" alt="Chitară electrică Instrumentis"></div>
+</section>
+
+ <!--produsele sunt aici-->
+
+<section class="categories">
+  <div class="section-head"><p class="eyebrow">EXPLOREAZĂ</p><h2>Găsește-ți sunetul</h2></div>
+  <div class="cat-grid">
+
+    <!--verifica in java numele de deasupra-->
+    
+    <button data-filter="Chitare electrice"><b>01</b><span>Chitare electrice</span></button>
+    <button data-filter="Chitare acustice"><b>02</b><span>Chitare acustice</span></button>
+    <button data-filter="Clape & piane"><b>03</b><span>Clape & piane</span></button>
+    <button data-filter="Tobe & percuție"><b>04</b><span>Tobe & percuție</span></button>
+    <button data-filter="Viori & corzi"><b>05</b><span>Viori & corzi</span></button>
+    <button data-filter="Suflătoare"><b>06</b><span>Suflătoare</span></button>
+    <button data-filter="Amplificatoare"><b>07</b><span>Amplificatoare</span></button>
+    <button data-filter="Studio & recording"><b>08</b><span>Studio & recording</span></button>
+  </div>
+</section>
+
+
+<section class="catalog" id="catalog">
+
+  
+  <div class="section-head row">
+    <div><p class="eyebrow">CATALOG</p><h2>Instrumente și echipamente</h2></div>
+    <div class="filters"><input id="search" type="search" placeholder="Caută un produs..."><select id="filter"><option value="">Toate categoriile</option></select></div>
+  </div>
+  <div class="product-grid" id="productGrid"></div>
+  <p class="updated">Ultima actualizare a catalogului: <strong>17 septembrie 2026</strong></p>
+
+
+</section>
+
+<section class="feature">
+
+
+  <div><p class="eyebrow">DE CE INSTRUMENTIS?</p><h2>Instrumentul potrivit schimbă felul în care cânți.</h2></div>
+  <div class="feature-list"><article><b>01</b><h3>Selecție atentă</h3><p>Produse prezentate clar, cu specificații și preț vizibil.</p></article><article><b>02</b><h3>Ajutor real</h3><p>Îți explicăm diferențele dintre modele înainte de cumpărare.</p></article><article><b>03</b><h3>Experiență simplă</h3><p>Navigare rapidă, coș de cumpărături și comandă ușor de urmărit.</p></article></div>
+
+
+</section>
+
+<section class="about" id="despre">
+
+
+  <div><p class="eyebrow">DESPRE NOI</p><h2>Un magazin construit în jurul pasiunii pentru muzică.</h2></div>
+  <div><p>Instrumentis este o firmă de exercițiu dedicată instrumentelor muzicale și echipamentelor pentru artiști, elevi și pasionați.</p><p>Scopul nostru este să oferim o experiență clară: produse, prețuri, informații și suport într-un singur loc.</p></div>
+
+
+</section>
+
+<section class="org" id="organizare">
+
+
+  <div class="section-head"><p class="eyebrow">ORGANIZARE</p><h2>Organigrama Instrumentis</h2></div>
+  <div class="org-chart"><div class="org-box main">Administrator / Director general</div><div class="org-line"></div><div class="org-row"><div class="org-box">Marketing & comunicare</div><div class="org-box">Vânzări & relații clienți</div><div class="org-box">Achiziții & catalog</div><div class="org-box">Financiar-contabil</div></div></div>
+
+
+</section>
+
+<!--Pt traducere-->
+
+
+<section class="location">
+
+
+  <div><p class="eyebrow">SITUAȚIE GEOGRAFICĂ</p><h2>Focșani, Vrancea</h2><p>Firmă de exercițiu cu activitate orientată către clienții din România.</p></div>
+  <div class="map-card" style="width: 100%; overflow: hidden; border-radius: 12px; border: 1px solid #2a2a2a;">
+    <iframe 
+        src="https://maps.google.com/maps?q=Colegiul%20Economic%20Mihail%20Kog%C4%83lniceanu%20Foc%C8%99ani&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+        width="100%" 
+        height="400" 
+        style="border:0; filter: grayscale(90%) invert(90%) contrast(120%);" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+</div>
+
+</section>
+
+<section class="contact" id="contact">
+  <div><p class="eyebrow">CONTACT</p><h2>Ai o întrebare?</h2><p>Scrie-ne și îți răspundem cu informațiile de care ai nevoie.</p><div class="contact-details"><p><b>Email</b><br>contact@instrumentis.ro</p><p><b>Telefon</b><br>+40 7xx xxx xxx</p><p><b>Adresă</b><br>Focșani, Vrancea, omânia</p></div></div>
+  <form id="contactForm"><label>Nume<input required name="name" placeholder="Numele tău"></label><label>Email<input required type="email" name="email" placeholder="email@exemplu.ro"></label><label>Mesaj<textarea required name="message" rows="5" placeholder="Cum te putem ajuta?"></textarea></label><button class="btn gold" type="submit">Trimite mesajul</button><p class="form-note" id="formNote"></p></form>
+</section>
+</main>
+
+<footer><div><img src="assets/logo.jpg" alt="Instrumentis"><p>Fiecare notă contează.</p></div><div><b>Instrumentis</b><a href="#catalog">Catalog</a><a href="#despre">Despre noi</a><a href="#contact">Contact</a></div><div><b>Informații</b><span>Termeni și condiții</span><span>Politica de confidențialitate</span><span>Livrare & retur</span></div><div><b>Unde ne găsiți</b><span>Focșani, Bulevardul Gării 25 Vrancea</span><span>România</span></div><small>© 2026 Instrumentis • Proiect educațional</small></footer>
+
+<aside class="cart" id="cart">
+  <div class="cart-head"><h2>Coșul tău</h2><button id="cartClose">×</button></div><div id="cartItems"></div><div class="cart-total"><span>Total</span><strong id="cartTotal">0 lei</strong></div>
+  <button class="btn gold full" id="checkout">Finalizează comanda</button><p class="secure">🔒 Comanda este o simulare educațională. Nu se efectuează plăți reale.</p>
+</aside><div class="overlay" id="overlay"></div>
+
+<div class="modal" id="productModal"><button class="modal-close" id="modalClose">×</button><div id="modalContent"></div></div>
+<div class="toast" id="toast"></div>
+
+<script src="data.js"></script><script src="script.js"></script>
+</body></html>
